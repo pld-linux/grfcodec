@@ -28,7 +28,7 @@ Zestaw narzędzi do modyfikacji plików GRX gry Transport Tycoon Deluxe.
 %{__make} \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	CFLAGAPP="%{rpmcflags}" \
+	CFLAGAPP="%{rpmcxxflags}" \
 	LDOPT="%{rpmldflags}" \
 	V="1"
 
