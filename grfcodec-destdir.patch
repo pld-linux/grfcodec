@@ -1,0 +1,22 @@
+--- grfcodec-r2306/Makefile~	2010-04-22 16:53:02.817784394 +0200
++++ grfcodec-r2306/Makefile	2010-04-22 16:53:49.571082097 +0200
+@@ -44,7 +44,7 @@
+ INSTALLPATH_CYGWIN=/usr/local/bin
+ INSTALLPATH_CYGWIN_MINGW=$(shell echo $$SYSTEMROOT | sed -e "s/\(.\):/\\/cygdrive\\/\\1/" -e s/\\\\/\\//g)
+ INSTALLPATH_MSYS_MINGW=$(SYSTEMROOT)
+-INSTALLPATH_LINUX=/usr/local/bin
++INSTALLPATH_LINUX=/usr/bin
+ 
+ -include ${MAKEFILELOCAL}
+ 
+@@ -315,6 +315,7 @@
+ 
+ install: $(GRFCODEC) $(GRFMERGE) $(GRFDIFF)
+ 	$(_E) [INSTALL]
+-	$(_C)cp $(GRFCODEC) $(INSTALLPATH)
+-	$(_C)cp $(GRFMERGE) $(INSTALLPATH)
+-	$(_C)cp $(GRFDIFF) $(INSTALLPATH)
++	$(_C)mkdir -p $(DESTDIR)$(INSTALLPATH)
++	$(_C)cp $(GRFCODEC) $(DESTDIR)$(INSTALLPATH)
++	$(_C)cp $(GRFMERGE) $(DESTDIR)$(INSTALLPATH)
++	$(_C)cp $(GRFDIFF) $(DESTDIR)$(INSTALLPATH)
