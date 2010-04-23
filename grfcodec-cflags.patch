@@ -5,7 +5,7 @@
  
  # use 386 instructions but optimize for pentium II/III
 -CFLAGS = -g -D$(TYPESIZE) -O3 -I. -O1 -idirafter$(BOOST_INCLUDE) -Wall -Wno-uninitialized $(CFLAGAPP)
-+CFLAGS = -g -D$(TYPESIZE) -I. -idirafter$(BOOST_INCLUDE) -Wall -Wno-uninitialized $(CFLAGAPP)
++CFLAGS = -D$(TYPESIZE) -I. -idirafter$(BOOST_INCLUDE) -Wall -Wno-uninitialized $(CFLAGAPP)
  
  ifeq ($(DEBUG),1)
  CFLAGS += -DDEBUG
