@@ -10,6 +10,8 @@ Source0:	http://binaries.openttd.org/extra/grfcodec/%{version}/%{name}-%{version
 Patch0:		%{name}-cflags.patch
 Patch1:		%{name}-destdir.patch
 URL:		http://www.ttdpatch.net/grfcodec/
+BuildRequires:	libstdc++-devel
+BuildRequires:	perl-base
 BuildRequires:	upx
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,6 +28,7 @@ Zestaw narzędzi do modyfikacji plików GRX gry Transport Tycoon Deluxe.
 
 %build
 %{__make} \
+	SVNVERSION="echo %{version} | tr -d r" \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
 	CFLAGAPP="%{rpmcxxflags}" \
