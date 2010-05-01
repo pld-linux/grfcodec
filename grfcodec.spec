@@ -1,11 +1,12 @@
+%define		rev	2306
 Summary:	Programs to modify Transport Tycoon Deluxe's GRF files
 Summary(pl.UTF-8):	Narzędzia do modyfikacji plików GRX gry Transport Tycoon Deluxe
 Name:		grfcodec
-Version:	r2306
-Release:	1
+Version:	0.9.10
+Release:	0.%{rev}.1
 License:	GPL v2+
 Group:		Applications
-Source0:	http://binaries.openttd.org/extra/grfcodec/%{version}/%{name}-%{version}-source.tar.bz2
+Source0:	http://binaries.openttd.org/extra/grfcodec/%{version}/%{name}-r%{rev}-source.tar.bz2
 # Source0-md5:	16de60c05fba2aa4a5c2b22d4e0eff42
 Patch0:		%{name}-cflags.patch
 Patch1:		%{name}-destdir.patch
@@ -22,13 +23,19 @@ A suite of programs to modify Transport Tycoon Deluxe's GRF files.
 Zestaw narzędzi do modyfikacji plików GRX gry Transport Tycoon Deluxe.
 
 %prep
-%setup -q
+%setup -q -n %{name}-r%{rev}
 %patch0 -p1
 %patch1 -p1
 
+VER=$(awk '/VER /{print $3}' version.def)
+if [ "$VER" != "%{version}" ]; then
+	: Current version is $VER, not %{version}
+	exit 1
+fi
+
 %build
 %{__make} \
-	SVNVERSION="echo %{version} | tr -d r" \
+	SVNVERSION="echo %{rev}" \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
 	CFLAGAPP="%{rpmcxxflags}" \
