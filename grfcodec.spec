@@ -6,7 +6,7 @@ Version:	0.9.10
 Release:	0.%{rev}.1
 License:	GPL v2+
 Group:		Applications
-Source0:	http://binaries.openttd.org/extra/grfcodec/%{version}/%{name}-r%{rev}-source.tar.bz2
+Source0:	http://binaries.openttd.org/extra/grfcodec/r%{rev}/%{name}-r%{rev}-source.tar.bz2
 # Source0-md5:	16de60c05fba2aa4a5c2b22d4e0eff42
 Patch0:		%{name}-cflags.patch
 Patch1:		%{name}-destdir.patch
