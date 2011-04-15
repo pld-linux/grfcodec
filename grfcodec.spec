@@ -1,12 +1,12 @@
 Summary:	Programs to modify Transport Tycoon Deluxe's GRF files
 Summary(pl.UTF-8):	Narzędzia do modyfikacji plików GRX gry Transport Tycoon Deluxe
 Name:		grfcodec
-Version:	5.1.0
+Version:	5.1.1
 Release:	1
 License:	GPL v2+
 Group:		Applications
 Source0:	http://binaries.openttd.org/extra/grfcodec/%{version}/%{name}-%{version}-source.tar.gz
-# Source0-md5:	3b3205dd25f17b628429d46c61d9b54f
+# Source0-md5:	223e5e01fb15169b3f6ef514f2493fac
 Patch0:		%{name}-version.patch
 URL:		http://www.ttdpatch.net/grfcodec/
 BuildRequires:	boost-devel
