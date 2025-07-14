@@ -28,7 +28,7 @@ Tycoon Deluxe.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 # drop -O2 flag from FLAGS
 %{__sed} -i 's,-O2,,' Makefile
